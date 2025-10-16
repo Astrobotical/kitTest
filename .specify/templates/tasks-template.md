@@ -49,6 +49,12 @@ description: "Task list template for feature implementation"
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
 
+## Constitution Check (required gating)
+
+Before moving from Phase 0 → Phase 1 ensure the plan and tasks templates include the Constitution Check gate and evidence links. The following placeholder task can be used to remind authors to add the gate:
+
+- [ ] CX01 Ensure `plan-template.md` and `tasks-template.md` include the "Constitution Check" section and evidence links
+
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)

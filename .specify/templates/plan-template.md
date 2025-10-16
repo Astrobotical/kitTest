@@ -31,7 +31,14 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Gates determined based on constitution file. Ensure the following evidence exists before Phase 0 completes:
+
+- Constitution file `.specify/memory/constitution.md` contains a `RATIFICATION_DATE` and `RatifiedBy` section.
+- Observability guidance exists (e.g., `docs/observability.md`).
+- Contracts/ schema examples exist under `specs/[###-feature]/contracts/` and CI script for compatibility checks is present.
+- Plan includes migration/rollback guidance for breaking schema changes when applicable.
+
+Run `.specify/scripts/bash/validate-constitution.sh` to validate templates include the Constitution Check gate.
 
 ## Project Structure
 
