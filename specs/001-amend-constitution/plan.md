@@ -1,4 +1,3 @@
-
 # Implementation Plan: Amend constitution for springboot-kafka
 
 **Branch**: `001-amend-constitution` | **Date**: 2025-10-15 | **Spec**: specs/001-amend-constitution/spec.md
@@ -38,7 +37,7 @@ major features.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 This plan MUST explicitly confirm the constitution gates. For this feature
 specifically, complete the following checklist and provide links/evidence
@@ -52,6 +51,7 @@ where applicable.
 
 If any of the above are NO, the plan must include a justification and a remediation
 path (Complexity Tracking section below).
+
 ## Project Structure
 
 For this repository the selected structure is a single backend project using
@@ -78,10 +78,9 @@ directories captured above]
 
 ## Complexity Tracking
 
-*Fill ONLY if Constitution Check has violations that must be justified*
+_Fill ONLY if Constitution Check has violations that must be justified_
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
-
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |
