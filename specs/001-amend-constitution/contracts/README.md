@@ -1,3 +1,11 @@
+# Contracts directory
+
+Add Avro/Proto/JSON schemas for messages produced and consumed by this
+repository. Place schema files under this directory and update compatibility
+policy in `.ci/schema-compatibility/check_compatibility.sh`.
+
+See project plan for guidance on schema format (Avro recommended).
+
 # contracts/ README
 
 This folder stores contract artifacts (Avro/Protobuf/JSON Schema) related to

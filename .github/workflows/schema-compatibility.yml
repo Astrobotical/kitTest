@@ -1,0 +1,14 @@
+name: Schema Compatibility
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-schema-compatibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run schema compatibility script
+        run: |
+          bash .ci/schema-compatibility/check_compatibility.sh specs/001-amend-constitution/contracts/example-message.avsc

@@ -1,0 +1,21 @@
+# Auto-generated .gitignore for springboot-kafka
+target/
+*.class
+*.jar
+.gradle/
+build/
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.env*
+*.iml
+.mvn/
+.settings/
+*.war
+*.ear
+bin/
+out/

@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "ExampleMessage",
+  "namespace": "com.example.kafka",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "timestamp", "type": "long" }
+  ]
+}

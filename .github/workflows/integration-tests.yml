@@ -1,0 +1,16 @@
+name: Integration Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  integration-tests:
+    runs-on: ubuntu-latest
+    services:
+      # Example services could be added here (Kafka, Schema Registry) for Testcontainers
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run integration tests
+        run: |
+          echo "Placeholder: run Maven/Gradle integration tests with Testcontainers"
