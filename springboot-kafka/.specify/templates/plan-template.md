@@ -17,15 +17,15 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: Java 17+ (repository default) — confirm if a different minor/patch target is required  
+**Primary Dependencies**: Spring Boot (recommended starter), Apache Kafka client, Avro (or chosen schema library), OpenTelemetry Java agent  
+**Storage**: N/A for ephemeral Kafka-only services; list persistent stores if this feature requires them (e.g., PostgreSQL)  
+**Testing**: JUnit 5 (unit), Testcontainers (Kafka + Schema Registry for integration), contract tests (Avro/Schema validation)  
+**Target Platform**: Linux server (containers) — CI and local dev should support Docker-based execution  
+**Project Type**: Modular JVM services + library artifacts (service modules & shared-contracts package)  
+**Performance Goals**: Define per-feature; common baseline: handle expected Kafka throughput with p95 processing latency <200ms unless otherwise noted  
+**Constraints**: Cross-service schema compatibility, backward/forward compatibility requirements for topics, and limited reliance on broker-side features beyond standard Kafka APIs  
+**Scale/Scope**: Service should be independently versioned; assume up to medium message volumes (100k messages/day) unless research indicates higher needs
 
 ## Constitution Check
 
@@ -50,13 +50,25 @@ confirm the following gates derived from the constitution:
 Fill out the short checklist below and attach links to the relevant files or
 artifacts.
 
-Constitution Gates:
+Constitution Gates (repository defaults pre-filled for springboot-kafka):
 
-- Modular boundaries confirmed: [YES/NO] — evidence: [link]
-- Observability plan provided: [YES/NO] — evidence: [link]
-- Contracts/schemas listed: [YES/NO] — evidence: [link]
-- Test coverage plan (unit/contract/integration): [YES/NO] — evidence: [link]
-- Migration/rollback plan present if needed: [YES/NO] — evidence: [link]
+- Modular boundaries confirmed: [YES/NO] — evidence: [link to design or package listing]
+  - Guidance: If YES, include module names (e.g., service-a, service-b, contracts) and the independent release/versioning strategy; if NO, document why a multi-module layout is infeasible.
+- Observability plan provided: [YES/NO] — evidence: [link to quickstart or observability.md]
+  - Guidance: List required metrics (processing_count, processing_errors, lag_ms), tracing (OpenTelemetry spans for processing pipeline), and log structure (structured JSON logs with correlation ids).
+- Contracts/schemas listed: [YES/NO] — evidence: [link to `specs/<feature>/contracts/` or schema repo]
+  - Guidance: Provide topic names, Avro/JSONSchema definitions, compatibility policy (BACKWARD/BRIDGE/FORWARD), and location (contracts/ or centralized registry).
+- Test coverage plan (unit/contract/integration): [YES/NO] — evidence: [link to tests/ or CI job]
+  - Guidance: Unit tests for business logic, contract tests validating schema compatibility, integration tests using Testcontainers (Kafka + Schema Registry), and CI gating to fail on contract or integration regressions.
+- Migration/rollback plan present if needed: [YES/NO] — evidence: [link to migration.md or runbook]
+  - Guidance: For any breaking change document a migration path (dual-write, versioned topics, consumer migration steps) and rollback steps; attach expected semantic version bump and downtime windows if applicable.
+
+Quick acceptance criteria (check these before Phase 1 design):
+
+- All public topic schemas are checked into `specs/<feature>/contracts/` or a referenced schema repo.
+- CI includes a schema-compatibility job that validates new schemas against the target registry or compatibility baseline.
+- Integration tests run with Testcontainers and are green locally and in CI.
+- Observability (metrics & tracing) has at least one example instrumentation added in the quickstart.
 
 ## Project Structure
 
