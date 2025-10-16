@@ -12,12 +12,13 @@ generated: 2025-10-16
 
 Purpose: Prepare directories, CI placeholders, and example artifacts so the work is reproducible and testable.
 
-- [X] T001 Create feature contracts directory `specs/001-amend-constitution/contracts/` (ensure .gitkeep present)
-- [X] T002 [P] Add example Avro schema `specs/001-amend-constitution/contracts/example-message.avsc` with a minimal record definition
-- [X] T003 [P] Create quickstart skeleton `specs/001-amend-constitution/quickstart.md` describing validation steps for the Constitution Check
-- [X] T004 Create CI helper folder `.ci/schema-compatibility/` and add `check_compatibility.sh` at `.ci/schema-compatibility/check_compatibility.sh`
+- [ ] T001 Create feature contracts directory `specs/001-amend-constitution/contracts/` (ensure .gitkeep present)
+- [ ] T002 [P] Add example Avro schema `specs/001-amend-constitution/contracts/example-message.avsc` with a minimal record definition
+- [ ] T003 [P] Create quickstart skeleton `specs/001-amend-constitution/quickstart.md` describing validation steps for the Constitution Check
+- [ ] T004 Create CI helper folder `.ci/schema-compatibility/` and add `check_compatibility.sh` at `.ci/schema-compatibility/check_compatibility.sh`
 - [ ] T005 [P] Create workflow placeholders: `.github/workflows/schema-compatibility.yml` and `.github/workflows/integration-tests.yml`
-- [X] T006 Initialize docs folder `docs/observability.md` with a header and TOC entry for OpenTelemetry + Prometheus guidance
+- [ ] T006 Initialize docs folder `docs/observability.md` with a header and TOC entry for OpenTelemetry + Prometheus guidance
+
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)
