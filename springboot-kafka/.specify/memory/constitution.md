@@ -11,13 +11,14 @@ Sync Impact Report
 - Added sections: none (placeholders replaced)
 - Removed sections: none
 - Templates requiring updates:
-	- .specify/templates/plan-template.md: ⚠ pending (review "Constitution Check" wording)
-	- .specify/templates/spec-template.md: ✅ aligned (no mandatory changes required)
-	- .specify/templates/tasks-template.md: ⚠ pending (ensure foundational tasks reflect observability/contract tests)
-	- .specify/templates/commands/: ⚠ missing (no commands/ folder found; review any command docs referencing old agents)
-- Follow-up TODOs:
-	- TODO(RATIFICATION_DATE): original adoption date unknown — please set when known
-	- Manual review of templates listed above to adjust gate text if needed
+  - .specify/templates/plan-template.md: ⚠ pending (review "Constitution Check" wording)
+  - .specify/templates/spec-template.md: ✅ aligned (no mandatory changes required)
+  - .specify/templates/tasks-template.md: ⚠ pending (ensure foundational tasks reflect observability/contract tests)
+  - .specify/templates/commands/: ⚠ missing (no commands/ folder found; review any command docs referencing old agents)
+- Follow-up/metadata:
+  - RATIFICATION_DATE: 2025-10-15
+  - RATIFIED_BY: Romario Burke
+  - Manual review of templates listed above to adjust gate text if needed
 -->
 
 # springboot-kafka Constitution
@@ -117,4 +118,4 @@ for this repository. Amendments follow the procedure below:
   MUST in this constitution during review is considered CRITICAL and must be
   addressed before merging.
 
-**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE) | **Last Amended**: 2025-10-15
+**Version**: 1.0.0 | **Ratified**: 2025-10-15 | **RatifiedBy**: Romario Burke | **Last Amended**: 2025-10-15
