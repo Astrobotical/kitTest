@@ -12,12 +12,12 @@ generated: 2025-10-16
 
 Purpose: Prepare directories, CI placeholders, and example artifacts so the work is reproducible and testable.
 
-- [ ] T001 Create feature contracts directory `specs/001-amend-constitution/contracts/` (ensure .gitkeep present)
-- [ ] T002 [P] Add example Avro schema `specs/001-amend-constitution/contracts/example-message.avsc` with a minimal record definition
-- [ ] T003 [P] Create quickstart skeleton `specs/001-amend-constitution/quickstart.md` describing validation steps for the Constitution Check
-- [ ] T004 Create CI helper folder `.ci/schema-compatibility/` and add `check_compatibility.sh` at `.ci/schema-compatibility/check_compatibility.sh`
-- [ ] T005 [P] Create workflow placeholders: `.github/workflows/schema-compatibility.yml` and `.github/workflows/integration-tests.yml`
-- [ ] T006 Initialize docs folder `docs/observability.md` with a header and TOC entry for OpenTelemetry + Prometheus guidance
+- [X] T001 Create feature contracts directory `specs/001-amend-constitution/contracts/` (ensure .gitkeep present)
+- [X] T002 [P] Add example Avro schema `specs/001-amend-constitution/contracts/example-message.avsc` with a minimal record definition
+- [X] T003 [P] Create quickstart skeleton `specs/001-amend-constitution/quickstart.md` describing validation steps for the Constitution Check
+- [X] T004 Create CI helper folder `.ci/schema-compatibility/` and add `check_compatibility.sh` at `.ci/schema-compatibility/check_compatibility.sh`
+- [X] T005 [P] Create workflow placeholders: `.github/workflows/schema-compatibility.yml` and `.github/workflows/integration-tests.yml`
+- [X] T006 Initialize docs folder `docs/observability.md` with a header and TOC entry for OpenTelemetry + Prometheus guidance
 
 ---
 
@@ -25,13 +25,13 @@ Purpose: Prepare directories, CI placeholders, and example artifacts so the work
 
 Purpose: Implement must-have infra and gating so user-story work is safe to begin. These tasks MUST complete before user stories.
 
-- [ ] T007 Add OpenTelemetry + Micrometer example config to `docs/observability.md` (include application.yml snippet and Java agent notes)
-- [ ] T008 [P] Add Testcontainers CI profile configuration in `src/test/resources/testcontainers.properties` (or repo-level test profile) to standardize CI integration tests
-- [ ] T009 [P] Add schema compatibility check script `.ci/schema-compatibility/check_compatibility.sh` (invokes HTTP compat API against configured registry)
-- [ ] T010 Create `specs/001-amend-constitution/contracts/README.md` documenting where to add schemas and the compatibility policy
-- [ ] T011 Add integration Testcontainers example `tests/integration/ITSchemaCompatibilityTest.java` (skeleton class using Testcontainers + Schema Registry)
-- [ ] T012 Add contract test skeleton `tests/contract/ContractCompatibilityTest.java` demonstrating loading `example-message.avsc` and invoking the script
-- [ ] T013 Add CI job file `.github/workflows/schema-compatibility.yml` that runs `.ci/schema-compatibility/check_compatibility.sh` on PRs
+- [X] T007 Add OpenTelemetry + Micrometer example config to `docs/observability.md` (include application.yml snippet and Java agent notes)
+- [X] T008 [P] Add Testcontainers CI profile configuration in `src/test/resources/testcontainers.properties` (or repo-level test profile) to standardize CI integration tests
+- [X] T009 [P] Add schema compatibility check script `.ci/schema-compatibility/check_compatibility.sh` (invokes HTTP compat API against configured registry)
+- [X] T010 Create `specs/001-amend-constitution/contracts/README.md` documenting where to add schemas and the compatibility policy
+- [X] T011 Add integration Testcontainers example `tests/integration/ITSchemaCompatibilityTest.java` (skeleton class using Testcontainers + Schema Registry)
+- [X] T012 Add contract test skeleton `tests/contract/ContractCompatibilityTest.java` demonstrating loading `example-message.avsc` and invoking the script
+- [X] T013 Add CI job file `.github/workflows/schema-compatibility.yml` that runs `.ci/schema-compatibility/check_compatibility.sh` on PRs
 
 ---
 
@@ -41,10 +41,10 @@ Goal: Complete, ratify, and publish the repository constitution so it becomes th
 
 Independent Test: The constitution file includes a RATIFICATION_DATE, ratifier list, and Sync Impact Report; `specs/001-amend-constitution/quickstart.md` contains a validation step that passes locally.
 
-- [ ] T014 [US1] Update `.specify/memory/constitution.md` to set `RATIFICATION_DATE: 2025-10-15` (or final date) and add a `RatifiedBy` section with reviewers' usernames
-- [ ] T015 [US1] Insert a short Sync Impact Report HTML comment block at the top of `.specify/memory/constitution.md` summarizing the change and affected templates
-- [ ] T016 [US1] Add a one-paragraph summary and links to evidence in `specs/001-amend-constitution/quickstart.md` describing how to validate the Constitution Check locally
-- [ ] T017 [US1] Create PR template for constitution ratification `.github/PULL_REQUEST_TEMPLATE/ratify-constitution.md` including a ratification checklist (signatures, approvals, docs updated)
+- [X] T014 [US1] Update `.specify/memory/constitution.md` to set `RATIFICATION_DATE: 2025-10-15` (or final date) and add a `RatifiedBy` section with reviewers' usernames
+- [X] T015 [US1] Insert a short Sync Impact Report HTML comment block at the top of `.specify/memory/constitution.md` summarizing the change and affected templates
+- [X] T016 [US1] Add a one-paragraph summary and links to evidence in `specs/001-amend-constitution/quickstart.md` describing how to validate the Constitution Check locally
+- [X] T017 [US1] Create PR template for constitution ratification `.github/PULL_REQUEST_TEMPLATE/ratify-constitution.md` including a ratification checklist (signatures, approvals, docs updated)
 
 ---
 
