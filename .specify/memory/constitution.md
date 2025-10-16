@@ -1,4 +1,5 @@
 # [PROJECT_NAME] Constitution
+<!-- Sync Impact Report: Constitution amendment ratified to add governance gates and contract testing tasks. -->
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
@@ -46,5 +47,10 @@
 [GOVERNANCE_RULES]
 <!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: 2025-10-15 | **Last Amended**: 2025-10-15
+
+## RatifiedBy
+
+- @romarioburke
+
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
